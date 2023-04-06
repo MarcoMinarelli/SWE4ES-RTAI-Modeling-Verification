@@ -12,5 +12,5 @@ The main objectives of this project are
   
   
   ## Things already done (so far)
-  23/03/2023: Intel NUC acquired
-  .05/04/2023: Successfully installed Linhux RTAI 5.3 on Linux Kernel 4.19.177
+  23/03/2023: Intel NUC acquired  
+  05/04/2023: Successfully installed Linhux RTAI 5.3 on Linux Kernel 4.19.177
