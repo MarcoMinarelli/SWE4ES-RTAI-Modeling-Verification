@@ -1,1 +1,0 @@
-cmd_/home/student/Desktop/RTAI_periodic/RTAI_periodic.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /home/student/Desktop/RTAI_periodic/RTAI_periodic.ko /home/student/Desktop/RTAI_periodic/RTAI_periodic.o /home/student/Desktop/RTAI_periodic/RTAI_periodic.mod.o ;  true

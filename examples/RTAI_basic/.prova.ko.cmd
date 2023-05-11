@@ -1,1 +1,0 @@
-cmd_/home/student/Desktop/provaRTAI/prova.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /home/student/Desktop/provaRTAI/prova.ko /home/student/Desktop/provaRTAI/prova.o /home/student/Desktop/provaRTAI/prova.mod.o ;  true

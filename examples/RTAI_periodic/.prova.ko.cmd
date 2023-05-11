@@ -1,1 +1,0 @@
-cmd_/home/student/Desktop/RTAI_periodic/prova.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /home/student/Desktop/RTAI_periodic/prova.ko /home/student/Desktop/RTAI_periodic/prova.o /home/student/Desktop/RTAI_periodic/prova.mod.o ;  true

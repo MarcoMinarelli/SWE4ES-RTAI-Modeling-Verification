@@ -1,1 +1,0 @@
-cmd_/home/student/Desktop/RTAI_basic/RTAI_basic.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /home/student/Desktop/RTAI_basic/RTAI_basic.ko /home/student/Desktop/RTAI_basic/RTAI_basic.o /home/student/Desktop/RTAI_basic/RTAI_basic.mod.o ;  true
