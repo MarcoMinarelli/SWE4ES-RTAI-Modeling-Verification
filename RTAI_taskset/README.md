@@ -22,26 +22,26 @@ When you're done, type sudo rmmod taskset
 There will be 2 log files: log.txt (in which time of transition fires are relative to the time last transition fire) and log_abs.txt (in which times are relative to start time): 
 
 in log.txt:  
-	t10
-	40
-	t20
-	0
-	t21
-	2
-	t11
-	0
-	t12
+	t10  
+	40  
+	t20  
+	0  
+	t21  
+	2  
+	t11  
+	0  
+	t12  
 	8  
 
 in log_abs.txt:  
-	t10
-	40.002438
-	t20
-	40.005878
-	t21
-	41.872993
-	t11
-	41.874775
-	t12
-	49.878071
+	t10  
+	40.002438  
+	t20  
+	40.005878  
+	t21  
+	41.872993  
+	t11  
+	41.874775  
+	t12  
+	49.878071  
 	
