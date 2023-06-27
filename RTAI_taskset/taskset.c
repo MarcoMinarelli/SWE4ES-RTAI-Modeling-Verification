@@ -118,13 +118,14 @@ void tsk4_job(long arg){
 		send_log(4, 40);
 		
 		
-		rt_change_prio(rt_whoami(), 4);
+		rt_change_prio(rt_whoami(), 3);
 		send_log(4, 41);
 		
 		rt_sem_wait(&mux1);
 		send_log(4, 42);
 		
 		busy_sleep(rand(1, 2) * MILLISEC);
+		rt_change_prio(rt_whoami(), 4);
 		send_log(4, 43);
 		
 		rt_sem_signal(&mux1);
@@ -132,7 +133,7 @@ void tsk4_job(long arg){
 		busy_sleep(rand(5, 10) * MILLISEC);
 		send_log(4, 44);
 		
-		rt_change_prio(rt_whoami(), 4);
+		rt_change_prio(rt_whoami(), 3);
 		send_log(4, 45);
 		
 		rt_sem_wait(&mux2);
@@ -141,6 +142,7 @@ void tsk4_job(long arg){
 		busy_sleep(rand(1, 2) * MILLISEC);
 		send_log(4, 47);
 		
+		rt_change_prio(rt_whoami(), 4);
 		rt_sem_signal(&mux2);
 		
 		rt_task_wait_period();
@@ -150,12 +152,13 @@ void tsk4_job(long arg){
 
 void tsk5_job(long arg){
 	while(1){
+		
 		send_log(5, 50);
 		
 		busy_sleep(rand(1, 2) * MILLISEC);
 		send_log(5, 51);
 		
-		rt_change_prio(rt_whoami(), 5);
+		rt_change_prio(rt_whoami(), 3);
 		send_log(5, 52);
 		
 		
@@ -163,6 +166,7 @@ void tsk5_job(long arg){
 		send_log(5, 53);
 		
 		busy_sleep(rand(1, 2) * MILLISEC);
+		rt_change_prio(rt_whoami(), 5);
 		send_log(5, 54);
 		
 		rt_sem_signal(&mux1);
