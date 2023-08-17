@@ -9,8 +9,3 @@ The main objectives of this project are
   3. Model a task set on ORIS tool
   4. Implement the task set on Linux RTAI and verify all the deadlines are satisfied.
   
-  
-  
-  ## Things already done (so far)
-  23/03/2023: Intel NUC acquired  
-  05/04/2023: Successfully installed Linhux RTAI 5.3 on Linux Kernel 4.19.177
