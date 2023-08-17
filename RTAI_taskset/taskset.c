@@ -21,17 +21,10 @@ long long s;
 
 
 int rand(int min, int max){
-	log_len++;
-	if(log_len >= LOG_VAL){
-		long long now = rt_get_cpu_time_ns();
-		rtf_put(FIFO_ID_VALUES, &now, sizeof(long long) );
-	}
 	unsigned random_val;
 	get_random_bytes(&random_val, sizeof(unsigned));
-	//random_val = min*100 + (random_val % max*100);
-	random_val = min + (random_val % max);
+	random_val = min + (random_val % (max + 1 - min));
 	if (random_val > max) random_val = max;
-	rt_printk("[%d, %d] %d ", min, max, random_val);
 	return random_val;
 }
 
@@ -85,14 +78,14 @@ void tsk2_job(long arg){
 		send_log(2, 20);
 		
 		
-		rt_change_prio(rt_whoami(), 3);
+		rt_change_prio(rt_whoami(), 1);
 		send_log(2, 21);
 		
 		rt_sem_wait(&mux1);
 		send_log(2, 22);
 		
 		busy_sleep(rand(1, 2) * MILLISEC);
-		rt_change_prio(rt_whoami(), 4);
+		rt_change_prio(rt_whoami(), 2);
 		send_log(2, 23);
 		
 		rt_sem_signal(&mux1);
@@ -100,7 +93,7 @@ void tsk2_job(long arg){
 		busy_sleep(rand(5, 10) * MILLISEC);
 		send_log(2, 24);
 		
-		rt_change_prio(rt_whoami(), 3);
+		rt_change_prio(rt_whoami(), 1);
 		send_log(2, 25);
 		
 		rt_sem_wait(&mux2);
@@ -109,7 +102,7 @@ void tsk2_job(long arg){
 		busy_sleep(rand(1, 2) * MILLISEC);
 		send_log(2, 27);
 		
-		rt_change_prio(rt_whoami(), 4);
+		rt_change_prio(rt_whoami(), 2);
 		rt_sem_signal(&mux2);
 		
 		rt_task_wait_period();
@@ -125,7 +118,7 @@ void tsk3_job(long arg){
 		busy_sleep(rand(1, 2) * MILLISEC);
 		send_log(3, 31);
 		
-		rt_change_prio(rt_whoami(), 3);
+		rt_change_prio(rt_whoami(), 1);
 		send_log(3, 32);
 		
 		
@@ -133,7 +126,7 @@ void tsk3_job(long arg){
 		send_log(3, 33);
 		
 		busy_sleep(rand(1, 2) * MILLISEC);
-		rt_change_prio(rt_whoami(), 5);
+		rt_change_prio(rt_whoami(), 3);
 		send_log(3, 34);
 		
 		rt_sem_signal(&mux1);
